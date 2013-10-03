@@ -1,4 +1,6 @@
+from google import search
 
+# The Guru
 class Guru():
     def __init__(self, name=""):
         self.name = name
@@ -14,5 +16,8 @@ class Guru():
         elif (self.user == 'Shakeel'):
             return "You cannot afford my wisdom"
         else:
-            return "That is a good question, let me think about it"
+            results = []
+            for url in search(question, stop=20):
+                results.append(url)
+            return results
 
