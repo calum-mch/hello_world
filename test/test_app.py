@@ -32,9 +32,9 @@ class TestGuruQuestion(unittest.TestCase):
         self.guru = Guru("Alistair MockLearn")
 
     def test_question(self):
-        expected = "That is a good question, let me think about it"
         self.guru.greeting("Cheng Wei")
-        self.assertEqual(self.guru.ask("Who am I?"),expected)
+        out = self.guru.ask("Who am I?")
+        self.assertEqual(len(out),self.guru.search_size)
 
     def test_question_Shakeel(self):
         expected = "You cannot afford my wisdom"

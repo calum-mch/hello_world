@@ -5,6 +5,7 @@ class Guru():
     def __init__(self, name=""):
         self.name = name
         self.user = ''
+        self.search_size = 20;
         
     def greeting(self, user=""):
         self.user = user
@@ -17,7 +18,7 @@ class Guru():
             return "You cannot afford my wisdom"
         else:
             results = []
-            for url in search(question, stop=20):
+            for url in search(question, stop=self.search_size):
                 results.append(url)
             return results
 
